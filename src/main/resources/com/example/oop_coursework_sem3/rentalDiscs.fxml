@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<TabPane fx:id="mainTabPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="559.0" prefWidth="825.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.oop_coursework_sem3.controllers.RentalDiscsController">
+  <tabs>
+    <Tab fx:id="tab1" text="Пользователи проката">
+      <content>
+        <AnchorPane fx:id="rentalUsersPane" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="825.0">
+               <children>
+                  <Label layoutX="16.0" layoutY="14.0" prefHeight="17.0" prefWidth="59.0" text="Фамилия:" />
+                  <Label layoutX="43.0" layoutY="49.0" prefHeight="17.0" prefWidth="31.0" text="Имя:" />
+                  <Label layoutX="15.0" layoutY="85.0" prefHeight="17.0" prefWidth="60.0" text="Отчество:" />
+                  <Label layoutX="33.0" layoutY="120.0" prefHeight="17.0" prefWidth="42.0" text="Адрес:" />
+                  <Label layoutX="17.0" layoutY="155.0" prefHeight="17.0" prefWidth="57.0" text="Телефон:" />
+                  <TextField fx:id="inpSurname_tab1" layoutX="84.0" layoutY="10.0" prefHeight="26.0" prefWidth="222.0" />
+                  <TextField fx:id="inpName_tab1" layoutX="84.0" layoutY="45.0" prefHeight="26.0" prefWidth="222.0" />
+                  <TextField fx:id="inpPatronymic_tab1" layoutX="84.0" layoutY="80.0" prefHeight="26.0" prefWidth="222.0" />
+                  <TextField fx:id="inpAddress_tab1" layoutX="84.0" layoutY="115.0" prefHeight="26.0" prefWidth="222.0" />
+                  <TextField fx:id="inpPhone_tab1" layoutX="84.0" layoutY="150.0" prefHeight="26.0" prefWidth="222.0" />
+                  <Label layoutX="422.0" layoutY="16.0" prefHeight="17.0" prefWidth="65.0" text="Искать по:" />
+                  <ComboBox fx:id="searchCombobox_tab1" layoutX="493.0" layoutY="12.0" onAction="#changeCombo_tab1_event" prefHeight="26.0" prefWidth="118.0" promptText="none" />
+                  <TextField fx:id="inputSearchPar_tab1" layoutX="620.0" layoutY="12.0" prefHeight="26.0" prefWidth="193.0" />
+                  <Separator layoutX="410.0" layoutY="10.0" orientation="VERTICAL" prefHeight="210.0" prefWidth="5.0" />
+                  <TableView fx:id="usersTable_tab1" layoutX="9.0" layoutY="229.0" onMouseClicked="#selectTableItem_event" prefHeight="290.0" prefWidth="807.0">
+                    <columns>
+                      <TableColumn fx:id="surnameCol_tab1" prefWidth="123.35119915008545" text="Фамилия" />
+                      <TableColumn fx:id="nameCol_tab1" prefWidth="137.64881896972656" text="Имя" />
+                        <TableColumn fx:id="patronymicCol_tab1" prefWidth="140.32443237304688" text="Отчество" />
+                        <TableColumn fx:id="addressCol_tab1" prefWidth="188.67556762695312" text="Адрес" />
+                        <TableColumn fx:id="phoneCol_tab1" prefWidth="214.99993896484375" text="Телефон" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="addNewUser_tab1" layoutX="92.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#addNewUser_tab1_event" text="Добавить" />
+                  <Button fx:id="changeUser_tab1" layoutX="176.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#changeUser_tab1_event" prefHeight="26.0" prefWidth="74.0" text="Изменить" />
+                  <Button fx:id="delUser_tab1" layoutX="261.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#delUser_tab1_event" prefHeight="26.0" prefWidth="67.5" text="Удалить" />
+                  <Button fx:id="find_tab1" layoutX="621.0" layoutY="48.0" mnemonicParsing="false" onMouseClicked="#findUser_tab1_event" prefHeight="26.0" prefWidth="90.0" text="Поиск" />
+                  <Button fx:id="clearFields_tab1" layoutX="9.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#clearFields_tab1_event" prefHeight="26.0" prefWidth="72.0" text="Очистить" />
+                  <Button fx:id="reset_tab1" layoutX="721.0" layoutY="48.0" mnemonicParsing="false" onMouseClicked="#reset_tab1_event" prefHeight="26.0" prefWidth="92.0" text="Очистить" />
+                  <Button fx:id="addRental_tab1" layoutX="498.0" layoutY="185.0" mnemonicParsing="false" onAction="#switchToDiscSelectingScene" prefHeight="26.0" prefWidth="120.0" text="Добавить прокат" />
+                  <Button fx:id="viewRentals_tab1" layoutX="628.0" layoutY="185.0" mnemonicParsing="false" onAction="#switchToViewRentalsScene" prefHeight="26.0" prefWidth="142.0" text="Посмотреть прокаты" />
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab fx:id="tab2" text="Список дисков">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="825.0">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" prefHeight="17.0" prefWidth="60.0" text="Название:" />
+                        <Label layoutX="35.0" layoutY="49.0" prefHeight="17.0" prefWidth="39.0" text="Жанр:" />
+                        <Label layoutX="23.0" layoutY="85.0" prefHeight="17.0" prefWidth="50.0" text="Выпуск:" />
+                        <Label layoutX="13.0" layoutY="120.0" prefHeight="17.0" prefWidth="62.0" text="Режиссер:" />
+                        <TextField fx:id="inpDiscName_tab2" layoutX="84.0" layoutY="10.0" prefHeight="26.0" prefWidth="222.0" />
+                        <TextField fx:id="inpDiscGenre_tab2" layoutX="84.0" layoutY="45.0" prefHeight="26.0" prefWidth="222.0" />
+                        <TextField fx:id="inpDiscRelease_tab2" layoutX="84.0" layoutY="80.0" prefHeight="26.0" prefWidth="222.0" />
+                        <TextField fx:id="inpDiscDirector_tab2" layoutX="84.0" layoutY="115.0" prefHeight="26.0" prefWidth="222.0" />
+                        <Label layoutX="422.0" layoutY="16.0" prefHeight="17.0" prefWidth="63.0" text="Искать по:" />
+                        <ComboBox fx:id="searchCombobox_tab2" layoutX="493.0" layoutY="12.0" onAction="#changeCombo_tab2_event" prefHeight="26.0" prefWidth="118.0" promptText="none" />
+                        <TextField fx:id="inputSearchPar_tab2" layoutX="620.0" layoutY="12.0" prefHeight="26.0" prefWidth="193.0" />
+                        <Separator layoutX="410.0" layoutY="10.0" orientation="VERTICAL" prefHeight="210.0" prefWidth="5.0" />
+                        <TableView fx:id="discsTable_tab2" layoutX="9.0" layoutY="229.0" onMouseClicked="#selectDiscTableItem_event" prefHeight="290.0" prefWidth="807.0">
+                           <columns>
+                              <TableColumn fx:id="discIdCol_tab2" prefWidth="64.5" text="Id" />
+                              <TableColumn fx:id="discNameCol_tab2" prefWidth="198.0" text="Название" />
+                              <TableColumn fx:id="discGenreCol_tab2" prefWidth="196.5" text="Жанр" />
+                              <TableColumn fx:id="discReleaseCol_tab2" prefWidth="122.0" text="Год выпуска" />
+                              <TableColumn fx:id="discDirectorCol_tab2" prefWidth="226.0" text="Режиссер" />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="addNewDisc_tab2" layoutX="92.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#addNewDisc_tab2_event" prefHeight="26.0" prefWidth="73.0" text="Добавить" />
+                        <Button fx:id="changeDisc_tab2" layoutX="176.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#changeDisc_tab2_event" prefHeight="26.0" prefWidth="74.0" text="Изменить" />
+                        <Button fx:id="delDisc_tab2" layoutX="261.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#delDisc_tab2_event" prefHeight="26.0" prefWidth="67.5" text="Удалить" />
+                        <Button fx:id="find_tab2" layoutX="621.0" layoutY="48.0" mnemonicParsing="false" onMouseClicked="#findDisc_tab2_event" prefHeight="26.0" prefWidth="90.0" text="Поиск" />
+                        <Button fx:id="clearFields_tab2" layoutX="9.0" layoutY="185.0" mnemonicParsing="false" onMouseClicked="#clearFields_tab2_event" prefHeight="26.0" prefWidth="72.0" text="Очистить" />
+                        <Button fx:id="reset_tab2" layoutX="721.0" layoutY="48.0" mnemonicParsing="false" onMouseClicked="#reset_tab2_event" prefHeight="26.0" prefWidth="92.0" text="Очистить" />
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+      <Tab fx:id="tab3" text="Список прокатов">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <TableView fx:id="rentalTable_tab3" layoutX="9.0" layoutY="10.0" onMouseClicked="#refreshTableBtn_tab3_event" prefHeight="508.0" prefWidth="806.0">
+                    <columns>
+                      <TableColumn fx:id="rentalIdCol_tab3" prefWidth="72.5" text="Id Проката" />
+                      <TableColumn fx:id="discIdCol_tab3" prefWidth="66.5" text="Id Диска" />
+                        <TableColumn fx:id="phoneCol_tab3" prefWidth="223.0" text="Телефон" />
+                        <TableColumn fx:id="issueDateCol_tab3" prefWidth="171.0" text="Дата выдачи" />
+                        <TableColumn fx:id="returnDateCol_tab3" prefWidth="163.0" text="Дата возврата" />
+                        <TableColumn fx:id="isReturnedCol_tab3" prefWidth="109.0" text="Возврещен ли" />
+                    </columns>
+                  </TableView>
+               </children></AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tab4" text="Выбор диска">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane fx:id="discSelecting" prefHeight="527.5" prefWidth="825.0">
+                     <children>
+                        <Label layoutX="10.0" layoutY="11.0" text="Добавление диска в прокат для пользователя:" underline="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userInfoField_addRent" layoutX="10.0" layoutY="40.0" text="Surname Name Patronymic, phoneNumber">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="105.0" text="Выберите диск для добавления в прокат:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnDone_addRent" layoutX="739.0" layoutY="491.0" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="26.0" prefWidth="75.0" text="Готово" />
+                        <Button fx:id="bntAddRent_addRent" layoutX="653.0" layoutY="491.0" mnemonicParsing="false" onMouseClicked="#btnAddRent_addRent_action" prefHeight="26.0" prefWidth="75.0" text="Добавить" />
+                        <TableView fx:id="discsTable_addRent" layoutX="9.0" layoutY="133.0" onMouseClicked="#selectDiscTableItem_addRent_event" prefHeight="347.0" prefWidth="807.0">
+                           <columns>
+                              <TableColumn fx:id="discIdCol_addRent" prefWidth="64.5" text="Id" />
+                              <TableColumn fx:id="discNameCol_addRent" prefWidth="198.0" text="Название" />
+                              <TableColumn fx:id="discGenreCol_addRent" prefWidth="196.5" text="Жанр" />
+                              <TableColumn fx:id="discReleaseCol_addRent" prefWidth="122.0" text="Год выпуска" />
+                              <TableColumn fx:id="discDirectorCol_addRent" prefWidth="226.0" text="Режиссер" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+      <Tab fx:id="tab5" text="Просмотр прокатов">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <AnchorPane fx:id="viewRentals" prefHeight="527.5" prefWidth="825.0">
+                     <children>
+                        <Label layoutX="10.0" layoutY="11.0" text="Все прокатаы пользователя:" underline="true">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="userInfoField_viewRentals" layoutX="10.0" layoutY="40.0" text="Surname Name Patronymic, phoneNumber">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="10.0" layoutY="105.0" text="Выберете прокат для возврата:">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnDone_viewRentals" layoutX="740.0" layoutY="491.0" mnemonicParsing="false" onAction="#switchToMainScene" prefHeight="26.0" prefWidth="75.0" text="Готово" />
+                        <Button fx:id="bntReturnRent_viewRentals" layoutX="654.0" layoutY="491.0" mnemonicParsing="false" onMouseClicked="#btnReturnRent_viewRentals_action" prefHeight="26.0" prefWidth="75.0" text="Вернуть" />
+                     </children>
+                  </AnchorPane>
+                  <TableView fx:id="rentalTable_viewRentals" layoutX="10.0" layoutY="132.0" onMouseClicked="#selectRentalTableItem_viewRentals_event" prefHeight="348.0" prefWidth="806.0">
+                     <columns>
+                        <TableColumn fx:id="rentalIdCol_viewRentals" prefWidth="70.5" text="Id Проката" />
+                        <TableColumn fx:id="discIdCol_viewRentals" prefWidth="74.5" text="Id Диска" />
+                        <TableColumn fx:id="phoneCol_viewRentals" prefWidth="222.0" text="Телефон" />
+                        <TableColumn fx:id="issueDateCol_viewRentals" prefWidth="175.0" text="Дата выдачи" />
+                        <TableColumn fx:id="returnDateCol_viewRentals" prefWidth="154.0" text="Дата возврата" />
+                        <TableColumn fx:id="isReturnedCol_viewRentals" prefWidth="109.0" text="Возвращен ли" />
+                     </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>
